@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: astra-vault-backend
+    ports:
+      - "8080:8080"
+    environment:
+      - RUST_LOG=info
+      # Add your environment variables here
+      # - STELLAR_NETWORK=testnet
+      # - HORIZON_URL=https://horizon-testnet.stellar.org
+      # - SOROBAN_RPC_URL=https://soroban-testnet.stellar.org
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
