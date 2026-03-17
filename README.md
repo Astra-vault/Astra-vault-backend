@@ -135,6 +135,3 @@ OpenAPI docs: `http://localhost:3000/docs` (if utoipa-swagger-ui enabled)
 ## License
 
 MIT License
-
-Happy building, Kelechi!  
-If you want to add Docker support, database integration (e.g., sqlx + Postgres), or more detailed endpoint examples, just let me know and I’ll expand it. 🚀
